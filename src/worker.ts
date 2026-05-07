@@ -27,7 +27,8 @@ export default {
     }
 
     if (STATIC_FILES.has(url.pathname)) {
-      const assetRequest = new Request(new URL(url.pathname === "/" ? "/index.html" : url.pathname, request.url), request);
+      const assetPath = url.pathname === "/" ? "/index.html" : url.pathname;
+      const assetRequest = new Request(new URL(assetPath, request.url), request);
       return env.ASSETS.fetch(assetRequest);
     }
 
