@@ -1,0 +1,62 @@
+name = "ogxglobalhorizon"
+main = "dist/worker.js"
+compatibility_date = "2026-05-07"
+
+routes = [
+  { pattern = "www.ogxglobalhorizon.com/*", zone_name = "ogxglobalhorizon.com" },
+  { pattern = "ogxacademy.com/*", zone_name = "ogxacademy.com" },
+  { pattern = "ogxshop.com/*", zone_name = "ogxshop.com" },
+  { pattern = "ogxmedia.com/*", zone_name = "ogxmedia.com" },
+  { pattern = "ogxlabs.com/*", zone_name = "ogxlabs.com" },
+  { pattern = "ogxcommunity.com/*", zone_name = "ogxcommunity.com" },
+  { pattern = "ogxprime.com/*", zone_name = "ogxprime.com" }
+]
+
+[[kv_namespaces]]
+binding = "LOGS_KV"
+id = "00000000000000000000000000000001"
+
+[[kv_namespaces]]
+binding = "OGX_CORE_KV"
+id = "00000000000000000000000000000002"
+
+[assets]
+directory = "./dist"
+
+[env.production]
+routes = [
+  { pattern = "www.ogxglobalhorizon.com/*", zone_name = "ogxglobalhorizon.com" },
+  { pattern = "ogxacademy.com/*", zone_name = "ogxacademy.com" },
+  { pattern = "ogxshop.com/*", zone_name = "ogxshop.com" },
+  { pattern = "ogxmedia.com/*", zone_name = "ogxmedia.com" },
+  { pattern = "ogxlabs.com/*", zone_name = "ogxlabs.com" },
+  { pattern = "ogxcommunity.com/*", zone_name = "ogxcommunity.com" },
+  { pattern = "ogxprime.com/*", zone_name = "ogxprime.com" }
+]
+
+[[env.production.kv_namespaces]]
+binding = "LOGS_KV"
+id = "00000000000000000000000000000001"
+
+[[env.production.kv_namespaces]]
+binding = "OGX_CORE_KV"
+id = "00000000000000000000000000000002"
+
+[env.staging]
+routes = [
+  { pattern = "staging.ogxglobalhorizon.com/*", zone_name = "ogxglobalhorizon.com" },
+  { pattern = "staging.ogxacademy.com/*", zone_name = "ogxacademy.com" },
+  { pattern = "staging.ogxshop.com/*", zone_name = "ogxshop.com" },
+  { pattern = "staging.ogxmedia.com/*", zone_name = "ogxmedia.com" },
+  { pattern = "staging.ogxlabs.com/*", zone_name = "ogxlabs.com" },
+  { pattern = "staging.ogxcommunity.com/*", zone_name = "ogxcommunity.com" },
+  { pattern = "staging.ogxprime.com/*", zone_name = "ogxprime.com" }
+]
+
+[[env.staging.kv_namespaces]]
+binding = "LOGS_KV"
+id = "00000000000000000000000000000003"
+
+[[env.staging.kv_namespaces]]
+binding = "OGX_CORE_KV"
+id = "00000000000000000000000000000004"
